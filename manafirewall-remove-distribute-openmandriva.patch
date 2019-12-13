@@ -1,0 +1,12 @@
+Index: setup.py
+===================================================================
+--- setup.py
++++ setup.py	2019-12-13 15:49:55.696042551 +0100
+@@ -25,7 +25,6 @@
+   #data_files=[('conf/manatools', ['XXX.yy',]), ],
+   install_requires=[
+     #"argparse",
+-    "distribute",
+     "PyYAML",
+   ],
+ )
