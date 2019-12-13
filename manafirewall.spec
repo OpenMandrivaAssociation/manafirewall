@@ -35,8 +35,6 @@ python setup.py build
 %install
 python setup.py install --root=%{buildroot}
 
-install -m 644 share/images/256x256/manafirewall.png %{buildroot}%{_iconsdir}/hicolor/256x256/apps/%{name}.png
-
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
@@ -85,4 +83,3 @@ EOF
 %{python_sitelib}/manafirewall/version.py
 %{python_sitelib}/manafirewall/zoneBaseDialog.py
 %{_datadir}/applications/%{name}.desktop
-%{_iconsdir}/hicolor/256x256/apps/%{name}.png
