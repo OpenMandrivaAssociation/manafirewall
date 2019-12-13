@@ -6,6 +6,7 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		https://github.com/manatools/manafirewall
 Source0:	manafirewall-master.09.06.2019.zip
+Patch0:   manafirewall-remove-distribute-openmandriva.patch
 
 BuildRequires:	pkgconfig(libyui)
 BuildRequires:  pkgconfig(libyui-mga)
@@ -26,7 +27,7 @@ This is the graphical configuration tool for firewalld based on python manatools
 
 %prep
 %setup -q -n manafirewall-master
-%autopatch -p1
+%autopatch -p0
 
 %build
 python setup.py build
