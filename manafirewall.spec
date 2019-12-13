@@ -35,6 +35,19 @@ python setup.py build
 %install
 python setup.py install --root=%{buildroot}
 
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+[Desktop Entry]
+Name=manafirewall
+Comment=Firewall
+Exec=%{_bindir}/%{name}
+Icon=%{name}
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=System/Libraries
+EOF
+
 %files
 %{_bindir}/manafirewall
 %{python_sitelib}/manafirewall-0.0.1-py3.7.egg-info/PKG-INFO
@@ -69,3 +82,4 @@ python setup.py install --root=%{buildroot}
 %{python_sitelib}/manafirewall/serviceBaseDialog.py
 %{python_sitelib}/manafirewall/version.py
 %{python_sitelib}/manafirewall/zoneBaseDialog.py
+%{_datadir}/applications/%{name}.desktop
