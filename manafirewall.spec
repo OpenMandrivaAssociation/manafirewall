@@ -32,10 +32,10 @@ This is the graphical configuration tool for firewalld based on python manatools
 %build
 python setup.py build
 
-install -m 644 share/images/256x256/manafirewall.png %{buildroot}%{_iconsdir}/hicolor/256x256/apps/%{name}.png
-
 %install
 python setup.py install --root=%{buildroot}
+
+install -m 644 share/images/256x256/manafirewall.png %{buildroot}%{_iconsdir}/hicolor/256x256/apps/%{name}.png
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
