@@ -1,6 +1,6 @@
 Name:		manafirewall
 Version:	0.0.1
-Release:	0.09.06.2019
+Release:	1.09.06.2019
 Summary:	manatools firewalld configuration tool
 Group:		System/Libraries
 License:	LGPLv2+
@@ -35,6 +35,8 @@ python setup.py build
 %install
 python setup.py install --root=%{buildroot}
 
+install -p -D -m644 share/images/256x256/manafirewall.png %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
+
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
 [Desktop Entry]
@@ -45,7 +47,7 @@ Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=System/Libraries
+Categories=System;Settings;Security;Internet
 EOF
 
 %files
@@ -83,3 +85,4 @@ EOF
 %{python_sitelib}/manafirewall/version.py
 %{python_sitelib}/manafirewall/zoneBaseDialog.py
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
