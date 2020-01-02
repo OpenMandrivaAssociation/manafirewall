@@ -47,7 +47,7 @@ Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=System/Libraries
+Categories=System;Settings;Security;Internet
 EOF
 
 %files
