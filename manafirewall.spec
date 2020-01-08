@@ -1,13 +1,14 @@
+%define snap 09.06.2019
+
 Name:		manafirewall
 Version:	0.0.1
-Release:	1.09.06.2019
+Release:	2.%{snap}.1
 Summary:	manatools firewalld configuration tool
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		https://github.com/manatools/manafirewall
-Source0:	manafirewall-master.09.06.2019.zip
+Source0:	manafirewall-master.%{snap}.zip
 Patch0:		manafirewall-remove-distribute-openmandriva.patch
-
 BuildRequires:	pkgconfig(libyui)
 BuildRequires:	pkgconfig(libyui-mga)
 BuildRequires:	pkgconfig(libyui-qt)
