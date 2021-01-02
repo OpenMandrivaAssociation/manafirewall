@@ -8,7 +8,8 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		https://github.com/manatools/manafirewall
 Source0:	https://github.com/manatools/manafirewall/archive/%{version}/%{name}-%{version}.tar.gz
-#Patch0:		manafirewall-remove-distribute-openmandriva.patch
+
+BuildRequires:  cmake
 BuildRequires:	pkgconfig(libyui)
 BuildRequires:	pkgconfig(libyui-mga)
 BuildRequires:	pkgconfig(libyui-qt)
@@ -21,6 +22,7 @@ Requires:	firewalld
 Requires:	python3dist(setuptools)
 Requires:	python-yaml
 Requires:	python-libyui
+Requires: libyui-ncurses
 Requires:	libyui-mga-ncurses
 Requires:	libyui-mga-qt
 
@@ -32,12 +34,16 @@ This is the graphical configuration tool for firewalld based on python manatools
 %autosetup -n manafirewall-%{version} -p0
 
 %build
-python setup.py build
+%cmake	-DCHECK_RUNTIME_DEPENDENCIES=ON				\
+	-Wno-dev
+%make_build
+
 
 %install
-python setup.py install --root=%{buildroot}
+%make_install -C build
 
-install -p -D -m644 share/images/256x256/manafirewall.png %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
+%find_lang %{name}
+
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
