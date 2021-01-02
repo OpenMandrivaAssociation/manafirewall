@@ -22,7 +22,7 @@ Requires:	firewalld
 Requires:	python3dist(setuptools)
 Requires:	python-yaml
 Requires:	python-libyui
-Requires: libyui-ncurses
+Requires:	libyui-ncurses
 Requires:	libyui-mga-ncurses
 Requires:	libyui-mga-qt
 
@@ -60,9 +60,9 @@ EOF
 
 %files
 %{_bindir}/manafirewall
-%dir %{python_sitelib}/%{name}-0.0.1-py%{py_ver}.egg-info
-%{python_sitelib}/%{name}-0.0.1-py%{py_ver}.egg-info/PKG-INFO
-%{python_sitelib}/%{name}-0.0.1-py*.egg-info/*.txt
+#dir #{python_sitelib}/%{name}-0.0.1-py%{py_ver}.egg-info
+#{python_sitelib}/%{name}-0.0.1-py%{py_ver}.egg-info/PKG-INFO
+#{python_sitelib}/%{name}-0.0.1-py*.egg-info/*.txt
 %dir %{python_sitelib}/%{name}
 %{python_sitelib}/%{name}/*.py
 %{python_sitelib}/%{name}/__pycache__
