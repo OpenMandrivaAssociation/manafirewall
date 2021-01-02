@@ -58,13 +58,11 @@ StartupNotify=true
 Categories=System;Settings;Security;Internet
 EOF
 
-%files
+%files -f %{name}.lang
 %{_bindir}/manafirewall
-#dir #{python_sitelib}/%{name}-0.0.1-py%{py_ver}.egg-info
-#{python_sitelib}/%{name}-0.0.1-py%{py_ver}.egg-info/PKG-INFO
-#{python_sitelib}/%{name}-0.0.1-py*.egg-info/*.txt
 %dir %{python_sitelib}/%{name}
 %{python_sitelib}/%{name}/*.py
 %{python_sitelib}/%{name}/__pycache__
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/org.mageia.manafirewall.desktop
 %{_datadir}/icons/hicolor/256x256/apps/%{name}.png
