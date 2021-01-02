@@ -8,7 +8,7 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		https://github.com/manatools/manafirewall
 Source0:	https://github.com/manatools/manafirewall/archive/%{version}/%{name}-%{version}.tar.gz
-Patch0:		manafirewall-remove-distribute-openmandriva.patch
+#Patch0:		manafirewall-remove-distribute-openmandriva.patch
 BuildRequires:	pkgconfig(libyui)
 BuildRequires:	pkgconfig(libyui-mga)
 BuildRequires:	pkgconfig(libyui-qt)
