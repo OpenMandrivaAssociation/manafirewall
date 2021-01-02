@@ -1,21 +1,21 @@
-%define snap 09.06.2019
+%global debug_package %{nil}
 
 Name:		manafirewall
 Version:	0.0.1
-Release:	2.%{snap}.1
+Release:	3
 Summary:	manatools firewalld configuration tool
 Group:		System/Libraries
 License:	LGPLv2+
 URL:		https://github.com/manatools/manafirewall
-Source0:	manafirewall-master.%{snap}.zip
+Source0:	https://github.com/manatools/manafirewall/archive/%{version}/%{name}-%{version}.tar.gz
 Patch0:		manafirewall-remove-distribute-openmandriva.patch
 BuildRequires:	pkgconfig(libyui)
 BuildRequires:	pkgconfig(libyui-mga)
 BuildRequires:	pkgconfig(libyui-qt)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python-libyui
-BuildRequires:	python3egg(setuptools)
-BuildRequires:	python3egg(pyyaml)
+BuildRequires:	python3dist(setuptools)
+BuildRequires:	python3dist(pyyaml)
 Requires:	python-manatools
 Requires:	firewalld
 Requires:	python3dist(setuptools)
@@ -29,7 +29,7 @@ This is the graphical configuration tool for firewalld based on python manatools
 (Suse widget abstraction library), to be run using QT, Gtk or ncurses interface.
 
 %prep
-%autosetup -n manafirewall-master -p0
+%autosetup -n manafirewall-%{version} -p0
 
 %build
 python setup.py build
