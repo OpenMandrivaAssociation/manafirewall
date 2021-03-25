@@ -66,3 +66,4 @@ EOF
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/org.mageia.manafirewall.desktop
 %{_datadir}/icons/hicolor/256x256/apps/%{name}.png
+%{_datadir}/metainfo/org.mageia.manafirewall.metainfo.xml
