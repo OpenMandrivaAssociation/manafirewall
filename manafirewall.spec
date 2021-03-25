@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 
 Name:		manafirewall
-Version:	0.0.1
-Release:	3
+Version:	0.0.2
+Release:	1
 Summary:	manatools firewalld configuration tool
 Group:		System/Libraries
-License:	LGPLv2+
+License:	GPLv2
 URL:		https://github.com/manatools/manafirewall
 Source0:	https://github.com/manatools/manafirewall/archive/%{version}/%{name}-%{version}.tar.gz
 
@@ -31,10 +31,10 @@ This is the graphical configuration tool for firewalld based on python manatools
 (Suse widget abstraction library), to be run using QT, Gtk or ncurses interface.
 
 %prep
-%autosetup -n manafirewall-%{version} -p0
+%autosetup -n manafirewall-%{version} -p1
 
 %build
-%cmake	-DCHECK_RUNTIME_DEPENDENCIES=ON				\
+%cmake	-DCHECK_RUNTIME_DEPENDENCIES=ON	\
 	-Wno-dev
 %make_build
 
