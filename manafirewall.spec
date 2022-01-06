@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:		manafirewall
-Version:	0.0.2
+Version:	0.0.3
 Release:	1
 Summary:	manatools firewalld configuration tool
 Group:		System/Libraries
