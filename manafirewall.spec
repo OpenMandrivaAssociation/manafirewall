@@ -2,7 +2,7 @@
 
 Name:		manafirewall
 Version:	0.0.3
-Release:	1
+Release:	2
 Summary:	manatools firewalld configuration tool
 Group:		System/Libraries
 License:	GPLv2
